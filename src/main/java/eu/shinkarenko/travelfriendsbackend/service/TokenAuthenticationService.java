@@ -26,21 +26,25 @@ public class TokenAuthenticationService {
     static final SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS512);
     static final String base64Key = Encoders.BASE64.encode(key.getEncoded());
     public static void addAuthentication(HttpServletResponse res, String username) {
+
+        System.out.println("key: "+key.toString());
         String JWT = Jwts.builder().setSubject(username)
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATIONTIME))
-                     //   .signWith(key, SignatureAlgorithm.HS512).compact();
-                .signWith(SignatureAlgorithm.HS512, base64Key).compact();
+                        .signWith(key).compact();
+               // .signWith(SignatureAlgorithm.HS512, base64Key).compact();
         res.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + JWT);
+        System.out.println("JWT: "+JWT);
     }
 
     public static Authentication getAuthentication(HttpServletRequest request) {
         String token = request.getHeader(HEADER_STRING);
+        System.out.println("token: "+token);
         if (token != null) {
             // parse the token.
             String user = Jwts.parser().setSigningKey(base64Key).parseClaimsJws(token.replace(TOKEN_PREFIX, "")).getBody()
                     .getSubject();
 
-            //String user = Jwts.parserBuilder().setSigningKey(base64Key).build().toString();
+
 
             return user != null ? new UsernamePasswordAuthenticationToken(user, null, Collections.emptyList()) : null;
         }

@@ -1,7 +1,6 @@
 package eu.shinkarenko.travelfriendsbackend.controller;
 
 import eu.shinkarenko.travelfriendsbackend.dao.VisitDAO;
-import eu.shinkarenko.travelfriendsbackend.model.Traveler;
 import eu.shinkarenko.travelfriendsbackend.model.Visit;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

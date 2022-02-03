@@ -27,6 +27,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET,"/swagger-ui/*").permitAll()
                 .antMatchers(HttpMethod.GET,"/v3/api-docs/swagger-config").permitAll()
                 .antMatchers(HttpMethod.GET,"/v3/api-docs").permitAll()
+                .antMatchers(HttpMethod.GET,"/swagger-ui.html").permitAll()
+                .antMatchers(HttpMethod.GET,"/h2-console").permitAll()
+                .antMatchers(HttpMethod.GET,"/h2-console/").permitAll()
+                .antMatchers(HttpMethod.GET,"/h2-console/*").permitAll()
 
 
 
