@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.util.*;
+
 @Repository
 public class VisitDAO {
     private static final Map<String, Visit> visitMap = new HashMap<>();
@@ -16,9 +17,10 @@ public class VisitDAO {
         Visit visit2 = new Visit(1, "asdfg", LocalDate.of(2022,2,1), LocalDate.of(2022, 2,10), "Russia", "Auto");
         Visit visit3 = new Visit(1, "zxcvb", LocalDate.of(2022,3,1), LocalDate.of(2022, 3,10), "Russia", "Auto");
 
-        visitMap.put(visit1.getVisitID(),visit1);
-        visitMap.put(visit2.getVisitID(),visit2);
-        visitMap.put(visit3.getVisitID(),visit3);
+      //  visitMap.put(visit1.getVisitID(),visit1);
+      //  visitMap.put(visit2.getVisitID(),visit2);
+      //  visitMap.put(visit3.getVisitID(),visit3);
+
     }
 
     public Visit getVisitByID(String visitID) {

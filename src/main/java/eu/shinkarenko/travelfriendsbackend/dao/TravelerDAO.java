@@ -1,23 +1,26 @@
-package eu.shinkarenko.travelfriendsbackend.dao;
-
-import eu.shinkarenko.travelfriendsbackend.entity.Traveler;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
-
-
-@Repository
-public interface TravelerDAO extends CrudRepository<Traveler, Long> {
-
-
-
-
-
-    // private static final Map<String, Traveler> tvlMap = new HashMap<>();
-
+//package eu.shinkarenko.travelfriendsbackend.dao;
+//
+//import eu.shinkarenko.travelfriendsbackend.entity.Traveler;
+//import org.springframework.data.repository.CrudRepository;
+//import org.springframework.stereotype.Repository;
+//
+//import java.util.HashMap;
+//import java.util.Map;
+//
+//
+//@Repository
+//public interface TravelerDAO extends CrudRepository<Traveler, Long> {
+//
+//
+//
+//
+//
+//     private static final Map<String, Traveler> tvlMap = new HashMap<>();
+//
 //    static {
 //        inittvls();
 //    }
-
+//
 //    private static void inittvls() {
 //        Traveler tvl1 = new Traveler(1l,"E01", "Smith", "Clerk");
 //        Traveler tvl2 = new Traveler(2l,"E02", "Allen", "Salesman");
@@ -50,4 +53,4 @@ public interface TravelerDAO extends CrudRepository<Traveler, Long> {
 //        Collection<Traveler> c = tvlMap.values();
 //        return new ArrayList<>(c);
 //    }
-}
+//}

@@ -14,4 +14,5 @@ public class Visit {
     private LocalDate EndDate;
     private String Country;
     private String Transport;
+
 }

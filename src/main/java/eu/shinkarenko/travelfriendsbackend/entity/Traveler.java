@@ -2,11 +2,9 @@ package eu.shinkarenko.travelfriendsbackend.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Getter
@@ -14,32 +12,35 @@ import java.util.Objects;
 @ToString
 @Entity
 @AllArgsConstructor
-@Table(name="TRAVELER")
+@Table(name="traveler")
 public class Traveler {
+
     @Id
-    @Column(name="ID", nullable =false)
-    private Long Id;
-    @Column(name = "TravelNo", length = 64, nullable = false)
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name= "increment", strategy= "increment")
+    @Column(name="id", nullable =false)
+    private long id;
+    @Column(name = "travelNo", length = 64, nullable = false)
     private String tvlNo;
-    @Column(name = "Name", length = 64, nullable = false)
-    private String tvlName;
-    @Column(name = "Position", length = 64, nullable = false)
+    @Column(name = "name", length = 64, nullable = false)
+    private String name;
+    @Column(name = "position", length = 64, nullable = false)
     private String position;
 
     public Traveler() {
 
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Traveler traveler = (Traveler) o;
-        return Id != null && Objects.equals(Id, traveler.Id);
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+//        Traveler traveler = (Traveler) o;
+//        return id != null && Objects.equals(id, traveler.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return getClass().hashCode();
+//    }
 }
